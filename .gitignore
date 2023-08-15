@@ -1,5 +1,20 @@
 .DS_Store
-npm-debug.log
-node_modules
+
+# Package Manager
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Editor configs
 .idea
+
+# Packages
+node_modules
+
+# Build outputs
 /lib
+/build
+/dist
