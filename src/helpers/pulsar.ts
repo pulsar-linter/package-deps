@@ -3,20 +3,20 @@ import { Dependency, DependencyResolved } from '../types'
 export async function getDependencies(packageName: string): Promise<(Dependency | Dependency[])[]> {
   const packageModule = atom.packages.getLoadedPackage(packageName)
   if (packageModule == null) {
-    return [];
+    return []
   }
 
   const packageDependencies = packageModule.metadata['package-deps']
   if (packageDependencies == null || Array.isArray(packageDependencies) === false) {
-    return [];
+    return []
   }
 
   return packageDependencies.map((dependency) => {
     if (typeof dependency === 'string') {
-      return { name: dependency };
+      return { name: dependency }
     }
 
-    return dependency;
+    return dependency
   })
 }
 
