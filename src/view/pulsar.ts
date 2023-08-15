@@ -123,13 +123,7 @@ export function confirmPackagesToInstall({
   })
 }
 
-export function getView({
-  packageName,
-  dependencies,
-}: {
-  packageName: string
-  dependencies: DependencyResolved[]
-}): {
+export function getView({ packageName, dependencies }: { packageName: string; dependencies: DependencyResolved[] }): {
   handleFailure: (args: { dependency: DependencyResolved; error: Error }) => void
   handleDependencyInstalled: (dependency: DependencyResolved) => void
   handleComplete: () => void

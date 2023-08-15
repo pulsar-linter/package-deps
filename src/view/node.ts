@@ -10,12 +10,7 @@ export async function confirmPackagesToInstall({
   return dependencies.map((item) => (Array.isArray(item) ? item[0] : item))
 }
 
-export function getView({
-  dependencies,
-}: {
-  packageName: string
-  dependencies: DependencyResolved[]
-}): {
+export function getView({ dependencies }: { packageName: string; dependencies: DependencyResolved[] }): {
   handleFailure: (args: { dependency: DependencyResolved; error: Error }) => void
   handleDependencyInstalled: (dependency: DependencyResolved) => void
   handleComplete: () => void

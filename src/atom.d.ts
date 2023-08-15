@@ -4,7 +4,7 @@ import { Dependency } from './types'
 // TODO upstream these changes to @types/atom
 
 interface PackageMetadata extends PackageJson {
-  "package-deps"?: (string | Dependency | Dependency[])[]
+  'package-deps'?: (string | Dependency | Dependency[])[]
 }
 
 // "package-deps": [ "linter" ]
