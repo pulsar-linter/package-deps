@@ -3,6 +3,8 @@ import os from 'os'
 import path from 'path'
 import { Dependency, DependencyResolved } from '../types'
 
+import { PackageJson } from 'type-fest'
+
 export async function getDependencies(packageName: string): Promise<(Dependency | Dependency[])[]> {
   let packageStats: fs.Stats | null = null
 
@@ -16,7 +18,7 @@ export async function getDependencies(packageName: string): Promise<(Dependency 
     throw new Error(`[Package-Deps] Expected packageName to be a readable directory in Node.js invocation`)
   }
 
-  let parsed: Record<string, any> | null = null
+  let parsed: Record<string, unknown> | null = null
   try {
     const contents = await fs.promises.readFile(path.join(packageName, 'package.json'), 'utf8')
     parsed = JSON.parse(contents)
@@ -47,7 +49,7 @@ export async function getInstalledDependencyVersion(dependency: DependencyResolv
     return null
   }
 
-  let manifest: Record<string, any> | null = null
+  let manifest: PackageJson | null = null
 
   try {
     manifest = JSON.parse(await fs.promises.readFile(path.join(directory, 'package.json'), 'utf8'))

@@ -166,7 +166,7 @@ export function getView({
       progress.value += 1
       console.error(`[Package-Deps] Unable to install ${dependency.name}, Error:`, error?.stack ?? error)
     },
-    handleDependencyInstalled(dependency: DependencyResolved): void {
+    handleDependencyInstalled(): void {
       progress.value += 1
     },
     handleComplete() {

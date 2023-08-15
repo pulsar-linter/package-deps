@@ -2,9 +2,22 @@ import { Dependency, DependencyResolved } from '../types'
 
 export async function getDependencies(packageName: string): Promise<(Dependency | Dependency[])[]> {
   const packageModule = atom.packages.getLoadedPackage(packageName)
-  const packageDependencies = packageModule && packageModule.metadata['package-deps']
+  if (packageModule == null) {
+    return [];
+  }
 
-  return Array.isArray(packageDependencies) ? packageDependencies : []
+  const packageDependencies = packageModule.metadata['package-deps']
+  if (packageDependencies == null || Array.isArray(packageDependencies) === false) {
+    return [];
+  }
+
+  return packageDependencies.map((dependency) => {
+    if (typeof dependency === 'string') {
+      return { name: dependency };
+    }
+
+    return dependency;
+  })
 }
 
 export async function resolveDependencyPath(packageName: string): Promise<string | null> {
