@@ -2021,10 +2021,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-terser-config-atomic@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/terser-config-atomic/-/terser-config-atomic-0.1.1.tgz#dde43bd534b09b7c3c2ba65e0cdc68ed9740ea23"
-  integrity sha512-HRAHqjCFq990eFbLpy54joStSsUMZQoD73XMk2/Akquqm7vI0AOggfO9GMvSFGEucRRNZUfLQdDjotGGsZxCtA==
+terser-config-atomic@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/terser-config-atomic/-/terser-config-atomic-1.0.0.tgz#4d96e161031c1476f85169c200acbd15e48d24fc"
+  integrity sha512-WlhyFd4+honI08iaMxLg5P1eSg7RknCHzMI+AOwTNtMWkflGRrLHb7enbYmtpirUi05Tdun9wi/TNinNj4mrSg==
 
 terser@^5.0.0:
   version "5.19.2"
